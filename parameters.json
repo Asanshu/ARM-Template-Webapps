@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "e1e6b4c0-6153-460b-8b38-a330d9d1aa22"
+        },
+        "name": {
+            "value": "gamutkart-arm"
+        },
+        "location": {
+            "value": "Central US"
+        },
+        "hostingPlanName": {
+            "value": "ASP-RGAPP-9929"
+        },
+        "serverFarmResourceGroup": {
+            "value": "RG-APP"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "linuxFxVersion": {
+            "value": "TOMCAT|9.0-jre8"
+        }
+    }
+}
