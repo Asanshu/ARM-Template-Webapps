@@ -3,35 +3,51 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "subscriptionId": {
-            "type": "string"
+            "type": "String"
         },
         "name": {
-            "type": "string"
+            "type": "String"
         },
         "location": {
-            "type": "string"
+            "type": "String"
         },
         "hostingPlanName": {
-            "type": "string"
+            "type": "String"
         },
         "serverFarmResourceGroup": {
-            "type": "string"
+            "type": "String"
         },
         "alwaysOn": {
-            "type": "bool"
+            "type": "Bool"
+        },
+        "sku": {
+            "type": "String"
+        },
+        "skuCode": {
+            "type": "String"
+        },
+        "workerSize": {
+            "type": "String"
+        },
+        "workerSizeId": {
+            "type": "String"
+        },
+        "numberOfWorkers": {
+            "type": "String"
         },
         "linuxFxVersion": {
-            "type": "string"
+            "type": "String"
         }
     },
     "resources": [
         {
+            "type": "Microsoft.Web/sites",
             "apiVersion": "2018-11-01",
             "name": "[parameters('name')]",
-            "type": "Microsoft.Web/sites",
             "location": "[parameters('location')]",
-            "tags": {},
-            "dependsOn": [],
+            "dependsOn": [
+                "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
+            ],
             "properties": {
                 "name": "[parameters('name')]",
                 "siteConfig": {
@@ -41,6 +57,25 @@
                 },
                 "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
                 "clientAffinityEnabled": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2018-11-01",
+            "name": "[parameters('hostingPlanName')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [],
+            "sku": {
+                "Tier": "[parameters('sku')]",
+                "Name": "[parameters('skuCode')]"
+            },
+            "kind": "linux",
+            "properties": {
+                "name": "[parameters('hostingPlanName')]",
+                "workerSize": "[parameters('workerSize')]",
+                "workerSizeId": "[parameters('workerSizeId')]",
+                "numberOfWorkers": "[parameters('numberOfWorkers')]",
+                "reserved": true
             }
         }
     ]
