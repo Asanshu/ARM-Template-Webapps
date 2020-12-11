@@ -3,25 +3,40 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "subscriptionId": {
-            "value": "e1e6b4c0-6153-460b-8b38-a330d9d1aa22"
+            "value": "2820a7ce-23ca-4544-81ec-2e0291436339"
         },
         "name": {
-            "value": "gamutkart-arm-dev"
+            "value": "idrgamutkart"
         },
         "location": {
             "value": "Central US"
         },
         "hostingPlanName": {
-            "value": "ASP-RGAPP-9929"
+            "value": "ASP-gamutkarttest-8fba"
         },
         "serverFarmResourceGroup": {
-            "value": "RG-APP"
+            "value": "gamutkart_test"
         },
         "alwaysOn": {
             "value": false
         },
+        "sku": {
+            "value": "Free"
+        },
+        "skuCode": {
+            "value": "F1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
         "linuxFxVersion": {
-            "value": "TOMCAT|9.0-jre8"
+            "value": "TOMCAT|9.0-java11"
         }
     }
 }
