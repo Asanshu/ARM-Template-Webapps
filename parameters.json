@@ -6,22 +6,37 @@
             "value": "e1e6b4c0-6153-460b-8b38-a330d9d1aa22"
         },
         "name": {
-            "value": "gamutkart-arm"
+            "value": "gamutkart-web-dev"
         },
         "location": {
-            "value": "Central US"
+            "value": "West US"
         },
         "hostingPlanName": {
-            "value": "ASP-RGAPP-9929"
+            "value": "ASP-gamutkartdev-a4e6"
         },
         "serverFarmResourceGroup": {
-            "value": "RG-APP"
+            "value": "gamutkart_dev"
         },
         "alwaysOn": {
             "value": false
         },
+        "sku": {
+            "value": "Free"
+        },
+        "skuCode": {
+            "value": "F1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
         "linuxFxVersion": {
-            "value": "TOMCAT|9.0-jre8"
+            "value": "TOMCAT|9.0-java11"
         }
     }
 }
